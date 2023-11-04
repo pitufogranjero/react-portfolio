@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic</title>
+</head>
+<body>
+    <h1>Hello {{name}}</h1>
+    <p>{{categories}}</p>
+    <ul>
+        {# comentario de una linea #}
+        {% for category in categories  %}
+        {% if category == 'code' %}
+            <li><strong>{{ category|upper }}</strong></li>
+            {% else %}
+            <li>{{ category }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <h5>Total de categorías {{ categories|length }}</h5>
+    {% comment %}
+    comentario de
+    varias lineas
+    {% endcomment %}
+</body>
+</html>
